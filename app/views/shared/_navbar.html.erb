@@ -1,36 +1,33 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+<div class ="my-navbar">
+  <%= link_to root_path, class: "navbar-logo" do %>
+    <%= image_tag "iconlvlup.png" %>
   <% end %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
+  <div class="navbar-search">
+    <form action="" class= "navbar-form">
+      <input type="text" class="navbar-form-input" placeholder="Rechercher">
+      <!-- <button type="GO" class="navbar-form-btn">
         <i class="fa fa-search"></i>
-      </button>
+      </button> -->
     </form>
+  </div>
 
-    <!-- Different navigation if login or not -->
+  <span class="navbar-title">Level Up</span>
+
+
+  <div class= "navbar-right">
     <% if user_signed_in? %>
 
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+      <%= link_to "#", class: "navbar-item navbar-link" do %>
         <div class="badge-container">
           <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
+          <div class="badge badge-red">3</div>
         </div>
-      <% end %>
+    <% end %>
 
-      <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+    <div class="navbar-item">
+      <div class="dropdown">
+        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu">
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
@@ -38,39 +35,51 @@
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <i class="fas fa-comment-alt"></i> <%= t(".posts", default: "Posts") %>
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fas fa-sign-out-alt"></i> <%= t(".sign out", default: "Deconnection")%>
               <% end %>
             </li>
+
           </ul>
         </div>
       </div>
-
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-item navbar-link" %>
     <% end %>
-
-    <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
+
+
+
+
+
+
+
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-
